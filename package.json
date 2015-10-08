@@ -1,0 +1,21 @@
+{
+	"name": "event-webpush",
+	"version": "1.0.0",
+	"description": "",
+	"main": "event-webpush.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.voodoowarez.com/event-webpush"
+	},
+	"author": "rektide de la faye",
+	"license": "X",
+	"dependencies": {
+		"spdy": "^2.0.5"
+	},
+	"devDependencies": {
+		"tape": "^4.2.1"
+	}
+}
