@@ -24,7 +24,6 @@ function EventWebPush( https){
 util.inherits(EventWebPush, events.EventEmitter)
 
 EventWebPush.prototype.get= function get( opts, cb){
-	console.log("GET")
 	var isOptsFn= typeof(opts)=== "function"
 	if( isOptsFn){
 		cb= opts
@@ -36,6 +35,7 @@ EventWebPush.prototype.get= function get( opts, cb){
 			opts.agent= agent()
 		}else if( !opts.agent){
 			opts.agent= defaultAgent()
+		}else{
 		}
 	}
 
@@ -45,7 +45,6 @@ EventWebPush.prototype.get= function get( opts, cb){
 }
 
 EventWebPush.prototype.request= function request( opts, cb){
-	console.log("REQUEST")
 	var isOptsFn= typeof(opts)=== "function"
 	if( isOptsFn){
 		cb= opts
@@ -57,12 +56,17 @@ EventWebPush.prototype.request= function request( opts, cb){
 			opts.agent= agent()
 		}else if( !opts.agent){
 			opts.agent= defaultAgent()
+		}else{
 		}
 	}
 
 	var
 	  request= this._request(opts, cb)
 	request.on("push", this._emit)
+}
+
+EventWebPush.prototype.createAgent= function createAgent( opts){
+	return spdy.createAgent( opts|| {})
 }
 
 function agent(){

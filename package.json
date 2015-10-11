@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "event-webpush.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"files": "find . -path ./node_modules -prune -o -path ./\\.git -prune -o -name '.*' -o -type f -print"
 	},
 	"repository": {
 		"type": "git",
