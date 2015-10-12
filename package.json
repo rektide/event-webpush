@@ -14,7 +14,8 @@
 	"author": "rektide de la faye",
 	"license": "X",
 	"dependencies": {
-		"spdy": "^2.0.5"
+		"spdy": "^2.0.5",
+		"koa": "^1.0.0"
 	},
 	"devDependencies": {
 		"selfsigned": "^1.2.0",

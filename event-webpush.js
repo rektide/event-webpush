@@ -12,7 +12,7 @@ function EventWebPush( https){
 	}
 	https= https|| _global
 	this._get= https.get
-	this._request= https._request
+	this._request= https.request
 	var
 	  self= this
 	this._emit= function(stream){
@@ -42,6 +42,7 @@ EventWebPush.prototype.get= function get( opts, cb){
 	var
 	  get= this._get(opts, cb)
 	get.on("push", this._emit)
+	return get
 }
 
 EventWebPush.prototype.request= function request( opts, cb){
@@ -63,6 +64,7 @@ EventWebPush.prototype.request= function request( opts, cb){
 	var
 	  request= this._request(opts, cb)
 	request.on("push", this._emit)
+	return request
 }
 
 EventWebPush.prototype.createAgent= function createAgent( opts){
